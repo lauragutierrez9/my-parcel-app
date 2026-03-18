@@ -6,9 +6,9 @@
   "scripts": {
     "parcel:dev": "parcel",
     "parcel:build": "parcel build",
-    "clean": "rimraf dist .parcel-cache",
-    "start": "npm-run-all clean parcel:dev",
-    "build": "npm-run-all clean parcel:build"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "clean": "rimraf dist .parcel-cache"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.16.4",

@@ -1,9 +1,9 @@
-$color-oscuro: #2b3233;
-$color-texto: #375559;
-$color-llamativo: #1abfd9;
-$color-intermedio: #3c7a84;
-$color-fondos: #329eae;
-$color-hover:#D96F1A;
+$color-oscuro: rgba(89, 7, 7, 0.74);
+$color-fondos-nav-footer: rgba(42, 49, 50, 0.589);
+$color-texto: #D9BD9C;
+$color-hover: #BF1515;
+$color-fondos: rgba(38, 89, 2, 0.664);
+$color-intermedio: rgba(81, 107, 140);
 
 * {
   margin: 0;
@@ -21,7 +21,9 @@ body {
   min-height: 100vh;
   color: $color-texto;
   font-weight: 500;
-  background: linear-gradient(to bottom, $color-llamativo, $color-oscuro);
+  background: url(../img/background.jpg) center/cover no-repeat;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
   display: flex;
   flex-direction: column;
 }
@@ -34,27 +36,67 @@ main{
   padding: 1rem;
 }
 
+button{
+  background-color: $color-oscuro;
+  border: solid 0.1rem $color-oscuro;
+  border-radius: 0.6rem ;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $color-texto;
+  padding: 0.4rem 0.6rem;
+  margin: 1rem auto;
+
+  &:hover{
+    background-color: $color-hover;
+    transform: scale(1.1);
+  }
+}
+
 // HEADER
 
 header{
   width: 100%;
+  background: $color-fondos-nav-footer;
   
   nav ul{
     
     list-style: none;
     display: flex;
-   justify-content: center;
+    justify-content: center;
     padding: 1rem 0;
-    gap: 1rem;
-    font-size: 1.3rem;
+    gap: 1.4rem;
+    font-size: 1.2rem;
 
     li a{
-      color: $color-oscuro;
-      font-weight: 900;
+      color: $color-texto;
       text-decoration: none;
 
       &:hover{
         color: $color-hover;
+      }
+    }
+  }
+}
+
+//INDEX
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  section{
+
+    &.titulo-portada{
+      text-align: center;
+      
+      h1{
+        font-size: 4rem;
+        padding: 2rem 0rem;
+      }
+
+      p{
+        font-size: 1.4rem;
       }
     }
   }
@@ -66,6 +108,6 @@ footer {
   width: 100%;
   text-align: center;
   padding: 1rem;
-  background: $color-oscuro;
-  color: white;
+  background: $color-fondos-nav-footer;
+  color: $color-texto;
 }
