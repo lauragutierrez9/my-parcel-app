@@ -2,7 +2,7 @@ $color-oscuro: rgba(89, 7, 7, 0.74);
 $color-fondos-nav-footer: rgba(42, 49, 50, 0.589);
 $color-texto: #D9BD9C;
 $color-hover: #BF1515;
-$color-fondos: rgba(38, 89, 2, 0.664);
+$color-fondos: rgb(38, 89, 2);
 $color-intermedio: rgba(81, 107, 140);
 
 * {
@@ -21,7 +21,8 @@ body {
   min-height: 100vh;
   color: $color-texto;
   font-weight: 500;
-  background: url(../img/background.jpg) center/cover no-repeat;
+  background: url(../img/background.jpg)no-repeat center center ;
+  background-size: cover;
   background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: overlay;
   display: flex;
@@ -34,6 +35,40 @@ main{
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
+
+  &.det1{
+    flex-direction: column;
+  }
+}
+
+h1{
+  font-size: 4rem;
+  padding: 2rem 0rem;
+}
+
+h2{
+  font-size: 3rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+h3{
+  font-size: 1.4rem;
+  padding: 1rem 0 0.4rem 0;
+}
+  
+p{
+  font-size: 1rem;
+  padding: 0.2rem 0;
+}
+
+a{
+  color: $color-texto;
+  text-decoration: none;
+
+  &:hover{
+  color: $color-hover;
+  }
 }
 
 button{
@@ -49,6 +84,7 @@ button{
   &:hover{
     background-color: $color-hover;
     transform: scale(1.1);
+    cursor: pointer;
   }
 }
 
@@ -66,40 +102,86 @@ header{
     padding: 1rem 0;
     gap: 1.4rem;
     font-size: 1.2rem;
-
-    li a{
-      color: $color-texto;
-      text-decoration: none;
-
-      &:hover{
-        color: $color-hover;
-      }
     }
   }
-}
 
-//INDEX
+// INDEX
 
-main{
+main.index{
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
-  section{
+}
 
-    &.titulo-portada{
-      text-align: center;
-      
-      h1{
-        font-size: 4rem;
-        padding: 2rem 0rem;
-      }
+//CATEGORIA
 
-      p{
-        font-size: 1.4rem;
-      }
+.categoria{
+  h1{
+    font-size: 3rem;
+  }
+}
+
+.grid-recetas{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 4rem 0;
+
+  img{
+    width: 20rem;
+    height: 12rem;
+    box-shadow: 0.3rem 0.3rem 0.3rem 0.3rem rgba( 0, 0, 0, 0.3);
+    border-radius: 0.8rem;
+
+    &:hover{
+      scale: 1.1;
     }
   }
+
+  .card{
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+}
+
+//DET
+
+body.det1 {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url(../img/backgroundet.jpg) no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.receta{
+ p{
+
+   text-align: left;
+ }
+
+.receta {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+ img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    box-shadow: 0.3rem 0.3rem 0.3rem 0.3rem rgba( 0, 0, 0, 0.3);
+    border-radius: 0.8rem;
+    margin: 1rem 0;
+ }
+}
+
+iframe {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  aspect-ratio: 16/9;
 }
 
 //FOOTER
@@ -110,4 +192,5 @@ footer {
   padding: 1rem;
   background: $color-fondos-nav-footer;
   color: $color-texto;
+
 }
