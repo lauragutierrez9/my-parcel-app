@@ -1,9 +1,9 @@
-$color-oscuro: rgba(89, 7, 7, 0.74);
+$color-oscuro: rgba(89, 7, 7, 0.678);
 $color-fondos-nav-footer: rgba(42, 49, 50, 0.589);
 $color-texto: #D9BD9C;
-$color-hover: #BF1515;
-$color-fondos: rgb(38, 89, 2);
-$color-intermedio: rgba(81, 107, 140);
+$color-hover: #bf1515;
+$color-h2: rgb(134, 182, 99);
+$color-intermedio: rgba(81, 107, 140, 0.658);
 
 * {
   margin: 0;
@@ -59,7 +59,7 @@ h3{
   
 p{
   font-size: 1rem;
-  padding: 0.2rem 0;
+  padding: 0.4rem 0;
 }
 
 a{
@@ -71,15 +71,19 @@ a{
   }
 }
 
-button{
-  background-color: $color-oscuro;
-  border: solid 0.1rem $color-oscuro;
-  border-radius: 0.6rem ;
-  font-size: 1rem;
-  font-weight: 600;
-  color: $color-texto;
-  padding: 0.4rem 0.6rem;
-  margin: 1rem auto;
+button {
+  background: $color-oscuro;
+  border: none;
+  padding: 0.7rem 1rem;
+  color: white;
+  font-weight: bold;
+  margin: 1rem 2rem;
+  border-radius: 5px;
+  
+  &:hover {
+    cursor: pointer;
+    background: $color-hover;
+  }
 
   &:hover{
     background-color: $color-hover;
@@ -149,11 +153,54 @@ main.index{
 
 //DET
 
-body.det1 {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url(../img/backgroundet.jpg) no-repeat center top;
+body.det {
+  background: url("../img/background.jpg");
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+main.det {
+  background-color: $color-intermedio;
+   border-radius: 0.8rem;
+
+  h2, h3{
+    color: $color-h2;
+  }
+
+  p, li, h3{
+    margin: 0 2rem;
+  }
+
+  img, iframe {
+    display: block;
+    margin: 1rem auto;
+    width: 20rem ;
+     border-radius: 0.8rem;
+  }
+
+}
+
+.cabecera {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+   border-radius: 0.8rem;
+}
+
+.margarita{
+  background-image: url("../img/pizza-margarita.jpg");
+  
+}
+
+.carbonara{
+  background-image: url("../img/pasta-carbonara.jpg");
+}
+
 
 .receta{
  p{

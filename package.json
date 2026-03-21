@@ -20,7 +20,8 @@
   "browserslist": [
     "> 0.5%",
     "last 2 versions",
-    "not dead"
+    "not dead",
+    "ie 11"
   ],
   "dependencies": {
     "sass": "^1.98.0"

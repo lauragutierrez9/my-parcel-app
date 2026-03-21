@@ -1,2 +1,12 @@
-const name = 'world';
-console.log(`Hello ${name}`);
+const boton = document.getElementById("toggleIngredientes");
+const lista = document.getElementById("ingredientes");
+
+boton.addEventListener("click", () => {
+  if (lista.style.display === "none") {
+    lista.style.display = "block";
+    boton.textContent = "Ocultar ingredientes";
+  } else {
+    lista.style.display = "none";
+    boton.textContent = "Mostrar ingredientes";
+  }
+});
