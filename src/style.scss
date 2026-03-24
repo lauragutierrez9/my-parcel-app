@@ -62,33 +62,28 @@ p{
   padding: 0.4rem 0;
 }
 
-a{
+a {
   color: $color-texto;
   text-decoration: none;
 
-  &:hover{
-  color: $color-hover;
+  &:hover {
+    color: $color-hover;
   }
 }
 
-button {
+a.btn, button {
+  display: inline-block;
   background: $color-oscuro;
-  border: none;
   padding: 0.7rem 1rem;
   color: white;
   font-weight: bold;
   margin: 1rem 2rem;
   border-radius: 5px;
-  
-  &:hover {
-    cursor: pointer;
-    background: $color-hover;
-  }
+  text-align: center;
 
-  &:hover{
-    background-color: $color-hover;
-    transform: scale(1.1);
-    cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+    background: $color-hover;
   }
 }
 
@@ -182,6 +177,10 @@ main.det {
      border-radius: 0.8rem;
   }
 
+}
+
+#ingredientes{
+  display: none;
 }
 
 .cabecera {

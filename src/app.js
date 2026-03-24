@@ -10,3 +10,7 @@ boton.addEventListener("click", () => {
     boton.textContent = "Mostrar ingredientes";
   }
 });
+
+document.getElementById("btnCategoria").addEventListener("click", () => {
+  window.location.href = "categoria.html";
+});
