@@ -21,7 +21,7 @@ body {
   min-height: 100vh;
   color: $color-texto;
   font-weight: 500;
-  background: url(../img/background.jpg)no-repeat center center ;
+  background: url(../img/background.webp)no-repeat center center ;
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: overlay;
@@ -112,6 +112,61 @@ main.index{
   align-items: center;
   text-align: center;
 
+  h1{
+    animation: fadeUp 2s ease;
+  }
+
+  h3{
+    animation: fadeUp 4s ease;
+  }
+
+  .flechas{
+    animation: fadeUp 6s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.svg-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.svg-icon svg {
+  fill: $color-h2;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.clip-img {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.clip-img img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: cover;
+
+  clip-path: polygon(
+    50% 0%,
+    85% 10%,
+    100% 40%,
+    90% 80%,
+    50% 100%,
+    10% 80%,
+    0% 40%,
+    15% 10%
+  );
+
+  transition: transform 0.4s ease;
+  animation: fadeUp 8s ease;
+}
+
+.clip-img img:hover {
+  transform: scale(1.05);
 }
 
 //CATEGORIA
@@ -129,19 +184,32 @@ main.index{
   margin: 4rem 0;
 
   img{
-    width: 20rem;
-    height: 12rem;
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
     box-shadow: 0.3rem 0.3rem 0.3rem 0.3rem rgba( 0, 0, 0, 0.3);
     border-radius: 0.8rem;
-
-    &:hover{
-      scale: 1.1;
-    }
   }
 
-  .card{
-    text-align: center;
-    font-size: 1.2rem;
+.card{
+  text-align: center;
+  font-size: 1.2rem;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeUp 2s ease forwards;
+
+    img{
+      transition: transform 0.4s ease;
+    }
+
+    &:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+
+      img{
+        transform: scale(1.05);
+      }
+    }
   }
   
 }
@@ -149,7 +217,7 @@ main.index{
 //DET
 
 body.det {
-  background: url("../img/background.jpg");
+  background: url("../img/background.webp");
   background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: overlay;
   background-size: cover;
@@ -198,7 +266,7 @@ main.det {
 }
 
 .carbonara{
-  background-image: url("../img/pasta-carbonara.jpg");
+  background-image: url("../img/pasta-carbonara.webp");
 }
 
 
@@ -279,7 +347,35 @@ footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   }
 
+}
+
+// ANIMACIONES
+  
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    fill: $color-intermedio;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+
+  @keyframes fadeUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
